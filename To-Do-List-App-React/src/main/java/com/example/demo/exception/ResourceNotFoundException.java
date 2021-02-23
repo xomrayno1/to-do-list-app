@@ -1,9 +1,9 @@
 package com.example.demo.exception;
 
-public class ApplicationException  extends RuntimeException{
+public class ResourceNotFoundException extends RuntimeException{
 	private String msg;
 
-	public ApplicationException(String msg) {
+	public ResourceNotFoundException(String msg) {
 		 
 		this.msg = msg;
 	}
@@ -15,7 +15,4 @@ public class ApplicationException  extends RuntimeException{
 	public void setMsg(String msg) {
 		this.msg = msg;
 	}
-	
-	
-
 }

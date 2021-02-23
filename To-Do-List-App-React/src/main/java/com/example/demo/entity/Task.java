@@ -8,12 +8,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 public class Task {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	@JsonProperty("title")
+	@Size(max = 25,min = 3 ,message =  "  3 - 25 character")
 	private String name;
 	private String description;
 	@Temporal(TemporalType.DATE)
@@ -50,6 +55,11 @@ public class Task {
 	}
 	public void setUpdateDate(Date updateDate) {
 		this.updateDate = updateDate;
+	}
+	@Override
+	public String toString() {
+		return "Task [id=" + id + ", name=" + name + ", description=" + description + ", createDate=" + createDate
+				+ ", updateDate=" + updateDate + "]";
 	}
 	
 	

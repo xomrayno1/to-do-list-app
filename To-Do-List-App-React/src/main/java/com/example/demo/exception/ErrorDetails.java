@@ -1,12 +1,23 @@
 package com.example.demo.exception;
 
-import java.sql.Date;
-
+import java.util.Date;
 public class ErrorDetails {
 	private int code;
 	private String messages;
 	private Date date;
+	private String description;
 	
+	
+	public ErrorDetails() {
+		 
+	}
+	public ErrorDetails(int code, String messages, Date date, String description) {
+		 
+		this.code = code;
+		this.messages = messages;
+		this.date = date;
+		this.description = description;
+	}
 	public int getCode() {
 		return code;
 	}
@@ -24,6 +35,12 @@ public class ErrorDetails {
 	}
 	public void setDate(Date date) {
 		this.date = date;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 	
