@@ -33,10 +33,11 @@ public class TaskController {
 	@Autowired
 	TaskService taskService;
 	
+	
 	@GetMapping
 	public ResponseEntity<APIResponse> showAll(@RequestParam("limit") int limit,
 			@RequestParam("page") int page,
-			@RequestParam(value = "title") String name){
+			@RequestParam("title") String name){
 		PageRequest pageRequest = PageRequest.of(page - 1, limit);
 		Page<Task> tasks = taskService.findByName(name, pageRequest);
 //		if(name == null) {
